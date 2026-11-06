@@ -1,0 +1,15 @@
+$kind: http-request
+name: http://localhost:3000/books/1
+description: ""
+url: http://localhost:3000/books/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"Война и мир — новое издание\",\r
+
+    \  \"author\": \"Лев Толстой\"\r
+
+    }"
+order: 3000

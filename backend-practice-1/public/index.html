@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя библиотека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div>
+                <h1>📚 Моя библиотека</h1>
+                <p>Управление каталогом книг</p>
+            </div>
+
+            <button id="refreshBtn" class="button secondary" type="button">
+                Обновить
+            </button>
+        </header>
+
+        <section class="panel">
+            <h2 id="formTitle">Добавить книгу</h2>
+
+            <form id="bookForm">
+                <input type="hidden" id="bookId">
+
+                <label>
+                    Название книги *
+                    <input
+                        id="title"
+                        type="text"
+                        placeholder="Например, Дюна"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Автор *
+                    <input
+                        id="author"
+                        type="text"
+                        placeholder="Имя автора"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Год издания
+                    <input
+                        id="year"
+                        type="number"
+                        placeholder="Например, 1965"
+                        min="0"
+                        max="3000"
+                    >
+                </label>
+
+                <label>
+                    Обложка книги
+                    <input
+                        id="cover"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                    <small>Форматы JPEG, PNG, WebP. Максимум 2 МБ.</small>
+                </label>
+
+                <div class="form-actions">
+                    <button
+                        id="submitBtn"
+                        class="button primary"
+                        type="submit"
+                    >
+                        Добавить книгу
+                    </button>
+
+                    <button
+                        id="cancelBtn"
+                        class="button secondary hidden"
+                        type="button"
+                    >
+                        Отмена
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="catalog">
+            <div class="catalog-heading">
+                <h2>Каталог книг</h2>
+
+                <input
+                    id="search"
+                    type="search"
+                    placeholder="Поиск по названию или автору..."
+                >
+            </div>
+
+            <p id="status" class="status">Загрузка книг...</p>
+
+            <div id="booksList" class="books-list"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
